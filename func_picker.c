@@ -14,16 +14,15 @@ func_struct control[] = {
 {"%", print_per},
 {"i", print_int},
 {"d", print_int},
-/*{"u", print_unsigned},
- {'x', print_hex},
-{'X', print_hex_big},
-{'b', print_binary},
-{'o', print_octal},
-{'R', print_rot13},
-{'r', print_rev},
-{'S', print_bigS},
-{'p', print_address}
-*/
+{"u", print_unsigned},
+{"x", print_hex},
+{"X", print_hex_big},
+{(char *) "b", print_binary},
+{"o", print_octal},
+{"R", print_rot13},
+{"r", print_rev},
+{"S", print_bigS},
+{"p", print_address},
 {NULL, NULL}
 };
 for (i = 0; control[i].s != NULL; i++)
