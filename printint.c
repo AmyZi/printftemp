@@ -61,35 +61,20 @@ d++;
 return (d);
 }
 /**
-  *convert - pointer to convert
-  *@num: num to covert
-  *@base: num to base
-  *@is_negative: num to negative
-  *Return: pointer
-  */
-char *convert(unsigned int num, int base, int is_negative)
+*print_binary - this function prints binary
+*@ap: argument
+*Return: pointer
+*/
+int print_binary(va_list ap)
 {
-static char buffer[20]; /* Assuming 20 characters is sufficient */
-char *ptr = &buffer[19];
-*ptr = '\0';
+unsigned int num = va_arg(ap, unsigned int);
+char *binary = convert(num, 2, 0); /* 0 indicates it's not negative */
 
-do {
-/* For hexadecimal, convert the remainder to the corresponding hex character */
-if (base == 16)
+int printed_chars = 0;
+for (int i = 0; binary[i] != '\0'; i++)
 {
-*(--ptr) = "0123456789ABCDEF"[num % base];
+_putchar(binary[i]);
+printed_chars++;
 }
-else
-{
-*(--ptr) = '0' + (num % base);
-}
-num /= base;
-} while (num != 0);
-
-if (is_negative)
-{
-*(--ptr) = '-';
-}
-
-return (ptr);
+return (printed_chars);
 }
