@@ -71,6 +71,7 @@ unsigned int num = va_arg(ap, unsigned int);
 char *binary = convert(num, 2, 0); /* 0 indicates it's not negative */
 
 int printed_chars = 0;
+int i;
 for (int i = 0; binary[i] != '\0'; i++)
 {
 _putchar(binary[i]);

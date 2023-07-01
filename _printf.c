@@ -24,7 +24,8 @@ if (*p == '%')
 count += _putchar('%');
 continue;
 }
-func_p pfunc = func_pick((char *)p);
+func_p pfunc;
+pfunc = func_pick((char *)p);
 if (pfunc != NULL)
 {
 count += pfunc(arguments);
