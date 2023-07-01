@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 {
 const char *p;
 int count = 0;
+func_p pfunc;
 
 va_list arguments;
 
@@ -24,7 +25,6 @@ if (*p == '%')
 count += _putchar('%');
 continue;
 }
-func_p pfunc;
 pfunc = func_pick((char *)p);
 if (pfunc != NULL)
 {

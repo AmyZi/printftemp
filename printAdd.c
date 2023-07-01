@@ -25,6 +25,7 @@ int print_hex_number(unsigned long int num, char *hex_digits)
 unsigned long int quotient = num;
 int length = 0;
 char buffer[BUFFER_SIZE];
+int i;
 
 if (num == 0)
 return (_putchar('0'));
@@ -35,8 +36,7 @@ buffer[length] = hex_digits[quotient % 16];
 quotient /= 16;
 length++;
 }
-int i;
-for (int i = length - 1; i >= 0; i--)
+for (i = length - 1; i >= 0; i--)
 _putchar(buffer[i]);
 
 return (length);
@@ -82,4 +82,3 @@ int count = 0;
 count += _puts(str);
 return (count);
 }
-
